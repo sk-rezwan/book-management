@@ -13,7 +13,4 @@ class books extends Model
       return $this->belongsTo('App\booksCategory', 'catId', 'catId');
     }
 
-    public function author(){
-      return $this->belongsTo('authors');
-    }
 }

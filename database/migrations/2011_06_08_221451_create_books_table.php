@@ -18,10 +18,10 @@ class CreateBooksTable extends Migration
             $table->increments('bookId');
             $table->string('bookTitle', 255)->nullable('false');
             $table->unsignedInteger('edition');
-            $table->unsignedInteger('authId');
+            //$table->unsignedInteger('authId');
             $table->unsignedInteger('catId');
             $table->foreign('catId')->references('catId')->on('books_categories');
-            $table->foreign('authId')->references('authId')->on('authors');
+            //$table->foreign('authId')->references('authId')->on('authors');
             $table->unsignedInteger('totalAvail')->default(0);
             $table->unsignedInteger('totalIss')->default(0);
 

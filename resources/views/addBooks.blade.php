@@ -42,19 +42,7 @@
                             -->
 
                       <div class="row" style="margin-left: 0px; margin-right: -57px;">
-                        <div class="custom_field form-group col-sm-10">
 
-                                <select class="form-control" id="sel1" name="author">
-                                <option>--Select Author--</option>
-                                <option>opp1</option>
-                                @foreach($auths as $auth)
-                                  <option> {{$auth->name}} </option>
-                                @endforeach
-                              </select>
-                          </div>
-                          <div class="col-sm-2 ">
-                            <button type="button" class="btn btn-primary btn-circle btn-sm"><i class="glyphicon glyphicon-plus"></i></button>
-                          </div>
 
                         </div>
 
@@ -63,7 +51,6 @@
 
                                   <select class="form-control" id="sel1" name="cat">
                                   <option>--Select Category--</option>
-                                  <option>opp1</option>
                                   @foreach($cats as $cat)
                                     <option> {{$cat->catName}}</option>
                                   @endforeach

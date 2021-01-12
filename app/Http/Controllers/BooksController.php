@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\books;
-use App\authors;
 use App\booksCategory;
 
 class BooksController extends Controller
@@ -28,10 +27,12 @@ class BooksController extends Controller
   public function create()
   {
 
-    $auths = authors::all();
+
     $cats = booksCategory::all();
 
-    return view('addBooks', array('auths' => $auths, 'cats'=> $cats ));
+    return view('addBooks', array('cats'=> $cats ));
+
+    //return redirect('/booksList');
 
       //return "Create Function called";
   }
@@ -48,12 +49,11 @@ class BooksController extends Controller
 
     $book->bookTitle = $request->title;
     $book->edition = $request->edition;
-    $book->authId = authors::where('name', $request->author)->first()->authId;
     $book->catId = booksCategory::where('catName', '=', $request->cat)->first()->catId;
     $book->totalAvail = $request->booksAvail;
 
     $book->save();
-    return redirect('/home');
+    return redirect('/booksList');
 
   }
 
